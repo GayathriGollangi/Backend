@@ -2,9 +2,16 @@ const express = require("express");
 
 const app = express();
 
+// app.use((req,res,next)=>{
+//     console.log("Hello from middleware");
+//     next();
+// })
+
 app.use((req,res,next)=>{
-    console.log("Hello from middleware");
+    const startTime = new Date().getTime();
     next();
+    const endTime = new Date().getTime();
+    console.log(endTime-startTime);
 })
 
 app.get("/",(req,res)=>{

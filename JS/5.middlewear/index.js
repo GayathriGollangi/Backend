@@ -1,5 +1,5 @@
 const express = require("express");
-
+const {watchMan} = require('./middlewear.js');
 const app = express();
 
 // app.use((req,res,next)=>{
@@ -7,12 +7,14 @@ const app = express();
 //     next();
 // })
 
-app.use((req,res,next)=>{
-    const startTime = new Date().getTime();
-    next();
-    const endTime = new Date().getTime();
-    console.log(endTime-startTime);
-})
+// app.use((req,res,next)=>{
+//     const startTime = new Date().getTime();
+//     next();
+//     const endTime = new Date().getTime();
+//     console.log(endTime-startTime);
+// })
+
+app.use(watchMan);
 
 app.get("/",(req,res)=>{
     res.send("Hello World");

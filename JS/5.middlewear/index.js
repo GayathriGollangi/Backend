@@ -28,6 +28,6 @@ app.get("/blog",(req,res)=>{
     res.send("Blog");
     console.log("blog");
 })
-app.listen(8070,()=>{
-    console.log("Server is running on port 8070");
+app.listen(8080,()=>{
+    console.log("Server is running on port 8080");
 })
